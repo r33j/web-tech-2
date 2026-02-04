@@ -1,0 +1,51 @@
+<header class="header">
+  <h1>Create Student</h1>
+</header>
+
+<main class="page">
+  <section class="form-section">
+    <form class="student-form">
+      
+      <div class="form-group">
+        <label for="studentId">Student ID</label>
+        <input type="text" id="studentId" />
+      </div>
+
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" />
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" />
+      </div>
+
+      <div class="form-group">
+        <label for="age">Age</label>
+        <input type="number" id="age" />
+      </div>
+
+      <div class="form-group">
+        <label for="gpa">GPA</label>
+        <input type="text" id="gpa" />
+      </div>
+
+      <div class="form-group">
+        <label for="status">Enrollment Status</label>
+        <input type="text" id="status" />
+      </div>
+
+      <div class="form-actions">
+    <button (click)="back()" class="btn secondary">Back</button>
+        <button type="submit" class="btn primary">Create student</button>
+      </div>
+
+    </form>
+  </section>
+</main>

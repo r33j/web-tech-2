@@ -4,46 +4,46 @@
 
 <main class="page">
   <section class="form-section">
-    <form class="student-form">
+    <form class="student-form" [formGroup]="form">
       
       <div class="form-group">
-        <label for="studentId">Student ID</label>
-        <input type="text" id="studentId" />
-      </div>
-
-      <div class="form-group">
         <label for="firstName">First Name</label>
-        <input type="text" id="firstName" />
+        <input type="text" id="firstName" formControlName="first_name" />
       </div>
 
       <div class="form-group">
         <label for="lastName">Last Name</label>
-        <input type="text" id="lastName" />
+        <input type="text" id="lastName" formControlName="last_name" />
       </div>
 
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" id="email" />
+        <input type="email" id="email" formControlName="email" />
       </div>
 
       <div class="form-group">
         <label for="age">Age</label>
-        <input type="number" id="age" />
+        <input type="number" id="age" formControlName="age" />
+      </div>
+
+      <div class="form-group">
+        <label for="course">Course</label>
+        <input type="text" id="course" formControlName="course" />
+      </div>
+
+      <div class="form-group">
+        <label for="yearLevel">Year Level</label>
+        <input type="number" id="yearLevel" formControlName="year_level" />
       </div>
 
       <div class="form-group">
         <label for="gpa">GPA</label>
-        <input type="text" id="gpa" />
-      </div>
-
-      <div class="form-group">
-        <label for="status">Enrollment Status</label>
-        <input type="text" id="status" />
+        <input type="number" id="gpa" formControlName="gpa" step="0.01" />
       </div>
 
       <div class="form-actions">
-    <button (click)="back()" class="btn secondary">Back</button>
-        <button type="submit" class="btn primary">Create student</button>
+        <button type="button" (click)="back()" class="btn secondary ">Back</button>
+        <button type="button" class="btn primary" (click)="createStudent()">Add Student</button>
       </div>
 
     </form>

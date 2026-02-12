@@ -1,4 +1,3 @@
-<html>
 <header class="header">
   <h1>Student Management System</h1>
 </header>
@@ -7,29 +6,14 @@
   <section class="content">
     <header class="title-row">
       <h2>List of Students</h2>
-    <a class="add-btn" [routerLink]="['/create-student']">Add Student</a>
+      <a class="add-btn" [routerLink]="['/create-student']">Add Student</a>
     </header>
 
-    <article class="student-card">
-      <h3>Mike Oxlong</h3>
-      <p>BSIT</p>
-      <p>2nd Year</p>
-      <button class="delete-btn">Delete</button>
-    </article>
-
-    <article class="student-card">
-      <h3>Justin Time</h3>
-      <p>BSCE</p>
-      <p>3rd Year</p> 
-      <button class="delete-btn">Delete</button>
-    </article>
-
-    <article class="student-card">
-      <h3>Chris P. Bacon</h3>
-      <p>BSBA</p>
-      <p>4th Year</p>
-      <button class="delete-btn">Delete</button>
+    <article class="student-card" *ngFor="let student of students()">
+      <h3>{{ student.first_name }} {{ student.last_name }}</h3>
+      <p>{{ student.course }}</p>
+      <p>{{ student.year_level }} Year</p>
+      <button class="delete-btn" (click)="deleteStudent(student.id)">Delete</button>
     </article>
   </section>
 </main>
-</html>

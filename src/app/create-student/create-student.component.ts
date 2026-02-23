@@ -1,24 +1,3 @@
-// import { Component } from '@angular/core';
-// import { CommonModule } from '@angular/common';
-// import { FormsModule } from '@angular/forms';
-// import { Router } from '@angular/router';
-// import { RouterLink } from '@angular/router';
-
-// @Component({
-//   selector: 'app-create-student',
-//   standalone: true,
-//   imports: [CommonModule, FormsModule, RouterLink],
-//   templateUrl: './create-student.component.html',
-//   styleUrls: ['./create-student.component.scss'],
-// })
-// export class CreateStudentComponent {
-//   constructor(private router: Router) {}
-
-//   back() {
-//     this.router.navigate(['/students']);     
-//   }
-// }
-
 import { Component, inject } from '@angular/core';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { StudentsService } from '../../services/students/students.service';
@@ -62,13 +41,12 @@ export class CreateStudentComponent {
       course: this.form.value.course ?? '',
       year_level: Number(this.form.value.year_level),
       gpa: Number(this.form.value.gpa),
-      enrollment_status: 'Active', // number type
+      enrollment_status: 'Active', 
     };
 
     try {
       console.log('Creating student', payload);
       await this.studentsService.createStudent(payload);
-      // Navigate back to student list after creation
       this.router.navigate(['/students']);
     } catch (error) {
       console.error('Error creating student:', error);

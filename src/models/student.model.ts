@@ -7,7 +7,7 @@ export interface GetStudent {
   course: string;
   year_level: number;
   gpa: number;
-  enrollment_status: string; // change from number → string
+  enrollment_status: string; 
   created_at: string;
 }
 
@@ -19,5 +19,5 @@ export interface CreateStudentPayload {
   course: string;
   year_level: number;
   gpa: number;
-  enrollment_status: string; // change from number → string
+  enrollment_status: string; 
 }
